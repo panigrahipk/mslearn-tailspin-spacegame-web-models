@@ -37,8 +37,10 @@ steps:
  
 - task: NuGetCommand@2
   inputs:
-    command: 'push'
-    feedsToUse: 'select'
+    command: push
+    feedsToUse: select
+    vstsFeed: 'Tailspin.SpaceGame.Web.Models'
+    nuGetFeedType: internal
     publishVstsFeed: 'Tailspin.SpaceGame.Web.Models'
     allowPackageConflicts: true
-  condition: succeeded()
+  
